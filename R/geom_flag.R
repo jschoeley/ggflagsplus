@@ -1,21 +1,22 @@
 
 flagGrob <- function(x, y, country, size=1, alpha=1){
-  grob(x=x, y=y, country=country, size=size, cl = "flag")
+  # grob(x=x, y=y, country=country, size=size, cl = "flag")
+  gTree(x = x, y = y, country = country, size = size, cl = "flag")
 }
 
 #' @export
-drawDetails.flag <- function(x, recording=FALSE){
-  
-  for(ii in seq_along(x$country)){
-    # grid.raster(x$x[ii], x$y[ii], 
-    #             width = x$size[ii]*unit(1,"mm"), height = x$size[ii]*unit(0.5,"mm"),
-    #             image = .flaglist[[x$country[[ii]]]], interpolate=FALSE)
-    grImport2::grid.picture(picture = .flaglist[[x$country[[ii]]]],
-      x = x$x[ii], y = x$y[ii],
-      width = x$size[ii] * unit(1, "mm"), height = x$size[ii] * unit(1, "mm"))
-  }
+makeContent.flag <- function(x) {
+  flag_pics <- lapply(seq_along(x$country),
+    function(ii) {
+      grImport2::pictureGrob(
+        picture = .flaglist[[x$country[[ii]]]],
+        x = x$x[ii], y = x$y[ii],
+        width = x$size[ii] * unit(1, "mm"),
+        height = x$size[ii] * unit(1, "mm"),
+        distort = FALSE)
+    })
+  setChildren(x, do.call(gList, flag_pics))
 }
-
 
 #' @export
 scale_country <- function(..., guide = "legend") {
@@ -61,8 +62,8 @@ GeomFlag <- ggproto("GeomFlag", Geom,
 #' ggplot(d, aes(x=x, y=y, country=country, size=x)) + 
 #'   geom_flag() + 
 #'   scale_country()
-#' @importFrom grid rasterGrob unit grob drawDetails
-#' @importFrom grImport2 grid.picture
+#' @importFrom grid unit gTree gList makeContent setChildren
+#' @importFrom grImport2 pictureGrob
 #' @export
 geom_flag <- function(mapping = NULL, data = NULL, stat = "identity",
                       position = "identity", na.rm = FALSE, show.legend = NA, 
