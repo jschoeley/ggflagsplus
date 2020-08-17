@@ -17,4 +17,4 @@ Imports:
     grid,
     grImport2,
     plotly
-RoxygenNote: 6.0.1
+RoxygenNote: 7.1.1
