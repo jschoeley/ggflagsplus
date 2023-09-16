@@ -63,6 +63,7 @@ flagGrob <- function(x, y, country, size = 1, alpha = 1) {
 
 #' @noRd
 makeContent.flag <- function(x) {
+  .flaglist <- utils::data(".flaglist")
   flag_pics <- lapply(
     seq_along(x$country),
     function(ii) {
