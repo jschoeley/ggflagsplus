@@ -57,13 +57,12 @@ GeomFlag <- ggplot2::ggproto("GeomFlag", ggplot2::Geom,
 
 #' @noRd
 flagGrob <- function(x, y, country, size = 1, alpha = 1) {
-  # grob(x=x, y=y, country=country, size=size, cl = "flag")
   grid::gTree(x = x, y = y, country = country, size = size, cl = "flag")
 }
 
 #' @noRd
+#' @exportS3Method grid::makeContent
 makeContent.flag <- function(x) {
-  .flaglist <- utils::data(".flaglist")
   flag_pics <- lapply(
     seq_along(x$country),
     function(ii) {
@@ -78,3 +77,6 @@ makeContent.flag <- function(x) {
   )
   grid::setChildren(x, do.call(grid::gList, flag_pics))
 }
+
+#' @noRd
+utils::globalVariables(c(".flaglist"))

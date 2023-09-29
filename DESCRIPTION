@@ -2,12 +2,24 @@ Package: ggflags
 Type: Package
 Version: 0.0.3
 Title: Plot flags of the world in ggplot2
-Authors@R: c(person("Baptiste", "Auguie",
+Authors@R: c(
+  person("Baptiste", "Auguie",
     email = "baptiste.auguie@gmail.com",
     role = c("aut", "cre")),
   person("James", "Goldie",
-    email = "me@rensa.co",
-    role = c("ctb")))
+    email = "me@jamesgoldie.dev",
+    role = c("aut", "ctb"),
+    comment = c(
+      ORCID = "0000-0002-5024-6207"
+    )),
+  person(
+    given = "Rémi", 
+    family = "Thériault",
+    role = c("aut", "ctb"),
+    email = "remi.theriault@mail.mcgill.ca",
+    comment = c(
+      ORCID = "0000-0003-4315-6788",
+      Twitter = "@rempsyc")))
 License: GPL (>= 3)
 Description: A ggplot2 extension that allows you to plot the flags of the world. It functions essentially 
   as geom_point does, requiring, at minimum, a two-letter lowercase country code for the country aesthetic, 
