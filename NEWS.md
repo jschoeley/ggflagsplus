@@ -1,3 +1,9 @@
+# ggflags 0.0.4
+
+- Some more internal rejiggering to ensure that you can use ggflags without explicitly loading the package
+  - If you're not loading the package and need to use it to plot things, prefix the package functions with `ggflags::` (eg. `ggflags::geom_flag`).
+  - If you need to access the internal flag list, either load it into the global environment as `lflags` using `data(lflags)` or access it prefixed with `ggflags::lflags`
+
 # ggflags 0.0.3
 
 - Adds Rémi Thériault as an author and contributor!
