@@ -1,8 +1,11 @@
-Package: ggflags
+Package: ggflagsplus
 Type: Package
-Version: 0.0.4
+Version: 0.0.5
 Title: Plot flags of the world in ggplot2
 Authors@R: c(
+  person("Schöley", "Jonas",
+    email = "jschoeley@gmail.com",
+    role = c("aut", "ctb")),
   person("Baptiste", "Auguie",
     email = "baptiste.auguie@gmail.com",
     role = c("aut", "cre")),
@@ -21,7 +24,8 @@ Authors@R: c(
       ORCID = "0000-0003-4315-6788",
       Twitter = "@rempsyc")))
 License: GPL (>= 3)
-Description: A ggplot2 extension that allows you to plot the flags of the world. It functions essentially 
+Description: Fork of ggflags with additional flags added.
+  A ggplot2 extension that allows you to plot the flags of the world. It functions essentially 
   as geom_point does, requiring, at minimum, a two-letter lowercase country code for the country aesthetic, 
   and x and y aesthetics. You can also adjust the size.
 LazyData: TRUE
@@ -33,6 +37,5 @@ Imports:
     ggplot2,
     scales
 Encoding: UTF-8
-RoxygenNote: 7.2.3
-URL: https://github.com/jimjam-slam/ggflags
-BugReports: https://github.com/jimjam-slam/ggflags/issues
+URL: https://github.com/jschoeley/ggflagsplus
+RoxygenNote: 7.3.2

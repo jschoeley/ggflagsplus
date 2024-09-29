@@ -67,7 +67,7 @@ makeContent.flag <- function(x) {
     seq_along(x$country),
     function(ii) {
       grImport2::pictureGrob(
-        picture = ggflags::lflags[[x$country[[ii]]]],
+        picture = ggflagsplus::lflags[[x$country[[ii]]]],
         x = x$x[ii], y = x$y[ii],
         width = x$size[ii] * grid::unit(1, "mm"),
         height = x$size[ii] * grid::unit(1, "mm"),

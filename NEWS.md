@@ -1,3 +1,8 @@
+# ggflagsplus 0.0.5
+
+- Forked from ggflags 0.0.4
+- Adds flags for Scotland, Northern Ireland, England and England & Wales
+
 # ggflags 0.0.4
 
 - Some more internal rejiggering to ensure that you can use ggflags without explicitly loading the package

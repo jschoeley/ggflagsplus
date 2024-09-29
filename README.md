@@ -1,30 +1,30 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-## ggflags: Plot flags of the world in ggplot2
+## ggflagsplus: Plot flags of the world in ggplot2
 
-A flag geom for ggplot2. Uses circular SVG flags.
+A flag geom for ggplot2. Uses circular SVG flags. Fork of ggflags with
+additional flags added.
 
 # Install
 
-Install from R-Universe:
+Install from github:
 
 ``` r
-install.packages("ggflags", repos = c(
-  "https://jimjam-slam.r-universe.dev",
-  "https://cloud.r-project.org"))
+devtools::install_github("jschoeley/ggflagsplus")
 ```
 
 # Use
 
 ``` r
 library(ggplot2)
-library(ggflags)
+library(ggflagsplus)
 
 set.seed(1234)
 d <- data.frame(
   x = rnorm(50), y = rnorm(50),
-  country = sample(c("ar", "fr", "nz", "gb", "es", "ca", "lv", "qa"), 50, TRUE),
+  country = sample(c("ar", "fr", "nz", "gb-eaw", "gb-sct", "gb-nir"),
+                   50, TRUE),
   stringsAsFactors = FALSE
 )
 
@@ -41,8 +41,4 @@ licence](https://github.com/eosrei/emojione-color-font/blob/master/LICENSE-CC-BY
 are taken from the EmojiOne set:
 <https://github.com/eosrei/emojione-color-font>
 
-(Note: the EmojiOne set doesn’t include UK counties or US states!)
-
 ![](man/figures/flags.png)
-
-(note: proof of principle only)
